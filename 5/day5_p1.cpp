@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-std::vector<int64_t> get_numbers(std::string line)
+std::vector<int64_t> get_ranges(std::string line)
 {
     // I really need a regex refresher
     std::vector<int64_t> numbers;
@@ -38,7 +38,7 @@ int main()
 
     std::getline(f, line);
     std::vector<int64_t> numbers;
-    std::vector<int64_t> seeds = get_numbers(line); // get seeds form the first line
+    std::vector<int64_t> seeds = get_ranges(line); // get seeds form the first line
     std::vector<bool> converted;
 
     int64_t source;
@@ -53,7 +53,7 @@ int main()
             converted = std::vector<bool>(5, false); // syntax?
         }
 
-        numbers = get_numbers(line);
+        numbers = get_ranges(line);
         // skip non number lines
         if (numbers.size() == 0)
         {
